@@ -2,6 +2,7 @@ CC=gcc
 CFLAGS=-Wall -Werror -g -MD
 
 OBJS = chunk.o memory.o debug.o value.o vm.o
+RM = rm -f
 
 main: $(OBJS)
 
@@ -10,9 +11,9 @@ main: $(OBJS)
 
 .PHONY: clean
 clean:
-	rm *.o
-	rm *.d
-	rm main
-	rm *_test
+	$(RM) *.o
+	$(RM) *.d
+	$(RM) main
+	$(RM) *_test
 
 -include $(OBJS:.o=.d)
